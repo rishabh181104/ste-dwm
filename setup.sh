@@ -7,7 +7,7 @@ install_debian() {
 }
 
 # Function to install dependencies for Red Hat-based distributions
-install_redhat() {
+install_fedora() {
     sudo yum groupinstall -y "Development Tools"
     sudo yum install -y dbus-devel gcc git libconfig-devel libdrm-devel libev-devel libX11-devel libX11-xcb libXext-devel libxcb-devel libGL-devel libEGL-devel libepoxy-devel meson ninja-build pcre2-devel pixman-devel uthash-devel xcb-util-image-devel xcb-util-renderutil-devel xorg-x11-proto-devel xcb-util-devel cmake libxft-devel libimlib2-devel libxinerama-devel libxcb-res0-devel alsa-utils
 }
@@ -27,7 +27,7 @@ if [ -f /etc/os-release ]; then
             echo "Installing Dependencies using apt"
             install_debian
             ;;
-        rhel|centos|fedora)
+        rhel|nobara|fedora)
             echo "Detected Red Hat-based distribution"
             echo "Installing dependencies using Yellowdog Updater Modified"
             install_redhat

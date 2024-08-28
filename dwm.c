@@ -354,6 +354,7 @@ static Window root, wmcheckwin;
 static xcb_connection_t *xcon;
 
 /* configuration, allows nested code to access above variables */
+void shiftview(const Arg *arg);
 #include "config.h"
 
 #if SHOWWINICON
@@ -3672,6 +3673,11 @@ main(int argc, char *argv[])
 		die("dwm: cannot open display");
 	if (!(xcon = XGetXCBConnection(dpy)))
 		die("dwm: cannot get xcb connection\n");
+
+// Add these lines to run your scripts
+system("~/set-resolution.sh");
+system("~/set_wallpaper.sh");
+
 	checkotherwm();
 	autostart_exec();
 	setup();
@@ -3685,4 +3691,19 @@ main(int argc, char *argv[])
 	cleanup();
 	XCloseDisplay(dpy);
 	return EXIT_SUCCESS;
+}
+void
+shiftview(const Arg *arg) {
+    Arg shifted;
+    unsigned int seltagset = selmon->tagset[selmon->seltags] & TAGMASK;
+    int i;
+    for(i = 0; i < LENGTH(tags); i++) {
+        if(seltagset & (1 << i))
+            break;
+    }
+    i = (i + arg->i) % LENGTH(tags);
+    if(i < 0)
+        i += LENGTH(tags);
+    shifted.ui = (1 << i);
+    view(&shifted);
 }

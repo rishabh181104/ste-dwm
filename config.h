@@ -16,7 +16,7 @@ static const int topbar                       = 1;   /* 0 means bottom bar */
 #define ICONSIZE                              17    /* icon size */
 #define ICONSPACING                           5     /* space between icon and title */
 #define SHOWWINICON                           1     /* 0 means no winicon */
-static const char *fonts[]                    = { "MesloLGS Nerd Font Mono:size=16", "NotoColorEmoji:pixelsize=16:antialias=true:autohint=true" };
+static const char *fonts[]                    = { "MesloLGS Nerd Font Mono:size=14", "NotoColorEmoji:pixelsize=16:antialias=true:autohint=true" };
 static const char normbordercolor[]           = "#3B4252";
 static const char normbgcolor[]               = "#2E3440";
 static const char normfgcolor[]               = "#D8DEE9";
@@ -44,6 +44,16 @@ static const char *const autostart[] = {
   "slstatus", NULL,
   NULL /* terminate */
 };
+
+#include <X11/XF86keysym.h>  // Add this at the beginning with other includes
+
+// Define brightness and audio control commands
+static const char *brightness_up[] = { "brightnessctl", "set", "+10%", NULL };
+static const char *brightness_down[] = { "brightnessctl", "set", "10%-", NULL };
+
+static const char *volume_up[] = { "amixer", "set", "Master", "5%+", NULL };
+static const char *volume_down[] = { "amixer", "set", "Master", "5%-", NULL };
+static const char *volume_mute[] = { "amixer", "set", "Master", "toggle", NULL };
 
 /* tagging */
 static const char *tags[] = { "", "", "", "", "" };
@@ -94,14 +104,14 @@ static const Layout layouts[] = {
 #define STATUSBAR "dwmblocks"
 /* commands */
 static const char *launchercmd[] = { "rofi", "-show", "drun", NULL };
-static const char *termcmd[]     = { "alacritty", NULL };
+static const char *termcmd[]     = { "kitty", NULL };
 
 static Key keys[] = {
     /* modifier                     key            function                argument */
     { MODKEY,                       XK_r,          spawn,                  {.v = launchercmd} }, // spawn rofi for launching other programs
     { MODKEY|ControlMask,           XK_r,          spawn,                  SHCMD ("protonrestart")}, // restart protonvpn
-    { MODKEY,                       XK_x,          spawn,                  {.v = termcmd } }, // spawn a terminal
-    { MODKEY,                       XK_b,          spawn,                  SHCMD ("xdg-open https://")}, // open default browser
+    { MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } }, // spawn a terminal
+    { MODKEY,                       XK_b,          spawn,                  SHCMD ("/home/ste/floorp/./floorp")}, // open default browser
     { MODKEY,                       XK_p,          spawn,                  SHCMD ("flameshot full -p /media/drive/Screenshots/")}, // capture full screen screenshot
     { MODKEY|ShiftMask,             XK_p,          spawn,                  SHCMD ("flameshot gui -p /media/drive/Screenshots/")}, // open flameshot gui for screenshot selection
     { MODKEY|ControlMask,           XK_p,          spawn,                  SHCMD ("flameshot gui --clipboard")}, // copy screenshot to clipboard
@@ -116,8 +126,8 @@ static Key keys[] = {
     { 0,                            0x1008ff12,    spawn,                  SHCMD ("amixer sset Master $(amixer get Master | grep -q '\\[on\\]' && echo 'mute' || echo 'unmute')")}, // toggle mute/unmute
     { 0,                            0x1008ff13,    spawn,                  SHCMD ("amixer sset Master 5%+ unmute")}, // unmute volume
     { MODKEY|ShiftMask,             XK_b,          togglebar,              {0} }, // toggle bar visibility
-    { MODKEY,                       XK_j,          focusstack,             {.i = +1 } }, // focus on the next client in the stack
-    { MODKEY,                       XK_k,          focusstack,             {.i = -1 } }, // focus on the previous client in the stack
+    { MODKEY,                       XK_j,          shiftview,              {.i = -1 } },  // Move to previous workspace
+    { MODKEY,                       XK_k,          shiftview,              {.i = +1 } },  // Move to next workspace
     { MODKEY|ShiftMask,             XK_j,          movestack,              {.i = +1 } }, // move stack up
     { MODKEY|ShiftMask,             XK_k,          movestack,              {.i = -1 } }, // move stack down
     { MODKEY,                       XK_i,          incnmaster,             {.i = +1 } }, // decrease the number of clients in the master area
@@ -150,6 +160,11 @@ static Key keys[] = {
     { MODKEY|ControlMask,           XK_q,          spawn,                  SHCMD("$HOME/.config/rofi/powermenu.sh")}, // exit dwm
     { MODKEY|ControlMask|ShiftMask, XK_r,          spawn,                  SHCMD("systemctl reboot")}, // reboot system
     { MODKEY|ControlMask|ShiftMask, XK_s,          spawn,                  SHCMD("systemctl suspend")}, // suspend system
+    { 0, XF86XK_MonBrightnessUp,   spawn, {.v = brightness_up } },
+    { 0, XF86XK_MonBrightnessDown, spawn, {.v = brightness_down } },
+    { 0, XF86XK_AudioRaiseVolume,  spawn, {.v = volume_up } },
+    { 0, XF86XK_AudioLowerVolume,  spawn, {.v = volume_down } },
+    { 0, XF86XK_AudioMute,         spawn, {.v = volume_mute } },
 };
 
 /* button definitions */
