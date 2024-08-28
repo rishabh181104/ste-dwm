@@ -3678,6 +3678,11 @@ main(int argc, char *argv[])
 system("~/set-resolution.sh");
 system("~/set_wallpaper.sh");
 
+if (fork() == 0) {
+    setsid();
+    execlp("picom", "picom", "--experimental-backends", NULL);
+}
+
 	checkotherwm();
 	autostart_exec();
 	setup();
