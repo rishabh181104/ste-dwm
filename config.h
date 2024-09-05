@@ -48,8 +48,8 @@ static const char *const autostart[] = {
 #include <X11/XF86keysym.h>  // Add this at the beginning with other includes
 
 // Define brightness and audio control commands
-static const char *brightness_up[] = { "brightnessctl", "set", "+10%", NULL };
-static const char *brightness_down[] = { "brightnessctl", "set", "10%-", NULL };
+static const char *brightness_up[] = { "brightnessctl", "set", "+5%", NULL };
+static const char *brightness_down[] = { "brightnessctl", "set", "5%-", NULL };
 
 static const char *volume_up[] = { "amixer", "set", "Master", "5%+", NULL };
 static const char *volume_down[] = { "amixer", "set", "Master", "5%-", NULL };
@@ -111,7 +111,7 @@ static Key keys[] = {
     { MODKEY,                       XK_r,          spawn,                  {.v = launchercmd} }, // spawn rofi for launching other programs
     { MODKEY|ControlMask,           XK_r,          spawn,                  SHCMD ("protonrestart")}, // restart protonvpn
     { MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } }, // spawn a terminal
-    { MODKEY,                       XK_b,          spawn,                  SHCMD ("one.ablaze.floorp")}, // open default browser
+    { MODKEY,                       XK_b,          spawn,                  SHCMD ("floorp")}, // open default browser
     { MODKEY,                       XK_p,          spawn,                  SHCMD ("flameshot full -p /media/drive/Screenshots/")}, // capture full screen screenshot
     { MODKEY|ShiftMask,             XK_p,          spawn,                  SHCMD ("flameshot gui -p /media/drive/Screenshots/")}, // open flameshot gui for screenshot selection
     { MODKEY|ControlMask,           XK_p,          spawn,                  SHCMD ("flameshot gui --clipboard")}, // copy screenshot to clipboard
@@ -151,6 +151,7 @@ static Key keys[] = {
     { MODKEY,                       XK_period,     focusmon,               {.i = +1 } }, // focus on the next monitor, if any
     { MODKEY|ShiftMask,             XK_comma,      tagmon,                 {.i = -1 } }, // tag previous monitor
     { MODKEY|ShiftMask,             XK_period,     tagmon,                 {.i = +1 } }, // tag next monitor
+    { MODKEY,                       XK_c,          spawn,                  SHCMD("/home/ste/Downloads/./cursor-0.40.4x86_64.AppImage") },
     TAGKEYS(                        XK_1,                                  0)
     TAGKEYS(                        XK_2,                                  1)
     TAGKEYS(                        XK_3,                                  2)
