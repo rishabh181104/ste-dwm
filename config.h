@@ -61,7 +61,7 @@ static const char *tags[] = { "", "", "", "", "" };
 static const char ptagf[] = "[%s %s]";  /* format of a tag label */
 static const char etagf[] = "[%s]";     /* format of an empty tag */
 static const int lcaselbl = 0;          /* 1 means make tag label lowercase */
-
+static const char *wificmd[] = { "/home/ste/.local/bin/wifi-menu", NULL };
 static const Rule rules[] = {
     /* xprop(1):
      *  WM_CLASS(STRING) = instance, class
@@ -152,6 +152,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_comma,      tagmon,                 {.i = -1 } }, // tag previous monitor
     { MODKEY|ShiftMask,             XK_period,     tagmon,                 {.i = +1 } }, // tag next monitor
     { MODKEY,                       XK_c,          spawn,                  SHCMD("/home/ste/Downloads/./cursor-0.40.4x86_64.AppImage") },
+    { MODKEY,                       XK_m,          spawn,                  SHCMD("/home/ste/Downloads/pycharm-2024.2.1/bin/./pycharm.sh") },
     TAGKEYS(                        XK_1,                                  0)
     TAGKEYS(                        XK_2,                                  1)
     TAGKEYS(                        XK_3,                                  2)
@@ -166,6 +167,7 @@ static Key keys[] = {
     { 0, XF86XK_AudioRaiseVolume,  spawn, {.v = volume_up } },
     { 0, XF86XK_AudioLowerVolume,  spawn, {.v = volume_down } },
     { 0, XF86XK_AudioMute,         spawn, {.v = volume_mute } },
+    { MODKEY,                       XK_w,          spawn,                  {.v = wificmd } },
 };
 
 /* button definitions */
