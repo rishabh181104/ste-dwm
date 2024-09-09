@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Set environment variables (if needed)
+# export ENV_VARIABLE=value
+
+# Start the power manager
+xfce4-power-manager &
+
+# Start the network manager applet (Wi-Fi)
+nm-applet &
+
+# Add other startup programs here
+
+# You can add other applications or commands that should run at startup.
+
