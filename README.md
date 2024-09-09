@@ -37,7 +37,7 @@ Note that you may want to keep the source directories of the tools you download 
 
 ## arch
 ```sh
-sudo pacman -S --needed base-devel extra/git extra/libx11 extra/libxcb extra/libxinerama extra/libxft extra/imlib2
+sudo pacman -S --needed base-devel extra/git extra/libx11 extra/libxcb extra/libxinerama extra/libxft extra/imlib2 xfce4-power-manageer networkmanager network-manager-applet blueman
 ```
 
 If you find yourself missing a library then this can usually be found by searching for the file name using pacman:
@@ -82,8 +82,8 @@ Installation
 ------------
 Clone the repository, then compile and install.
 ```sh
-$ git clone https://github.com/ChrisTitusTech/dwm-titus.git
-$ cd dwm-titus
+$ git clone https://github.com/rishabh181104/ste-dwm.git
+$ cd ste-dwm
 $ make
 $ sudo make install
 ```
