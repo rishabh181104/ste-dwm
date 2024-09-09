@@ -111,7 +111,7 @@ static Key keys[] = {
     { MODKEY,                       XK_r,          spawn,                  {.v = launchercmd} }, // spawn rofi for launching other programs
     { MODKEY|ControlMask,           XK_r,          spawn,                  SHCMD ("protonrestart")}, // restart protonvpn
     { MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } }, // spawn a terminal
-    { MODKEY,                       XK_b,          spawn,                  SHCMD ("floorp")}, // open default browser
+    { MODKEY,                       XK_b,          spawn,                  SHCMD ("thorium-browser")}, // open default browser
     { MODKEY,                       XK_p,          spawn,                  SHCMD ("flameshot full -p /media/drive/Screenshots/")}, // capture full screen screenshot
     { MODKEY|ShiftMask,             XK_p,          spawn,                  SHCMD ("flameshot gui -p /media/drive/Screenshots/")}, // open flameshot gui for screenshot selection
     { MODKEY|ControlMask,           XK_p,          spawn,                  SHCMD ("flameshot gui --clipboard")}, // copy screenshot to clipboard
