@@ -108,7 +108,7 @@ static const char *termcmd[]     = { "kitty", NULL };
 
 static Key keys[] = {
     /* modifier                     key            function                argument */
-    { MODKEY,                       XK_r,          spawn,                  {.v = launchercmd} }, // spawn rofi for launching other programs
+    { MODKEY,                       XK_space,      spawn,                  {.v = launchercmd} }, // spawn rofi for launching other programs
     { MODKEY|ControlMask,           XK_r,          spawn,                  SHCMD ("protonrestart")}, // restart protonvpn
     { MODKEY,                       XK_Return,     spawn,                  {.v = termcmd } }, // spawn a terminal
     { MODKEY,                       XK_b,          spawn,                  SHCMD ("thorium-browser")}, // open default browser
