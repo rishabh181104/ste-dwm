@@ -1,6 +1,6 @@
 #!/bin/bash
 # Directory where wallpapers are stored
-WALLPAPER_DIR="/home/ste/Downloads/background.png"
+WALLPAPER_DIR="/home/ste/background.png"
 
 # Select a random wallpaper
 WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
