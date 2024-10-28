@@ -91,9 +91,6 @@ clock() {
 }
 
 update_interval=1
-pkg_check_interval=3600 # Check for updates every hour
-
-update_interval=1
 pkg_check_interval=60 # Check for updates every hour
 
 updates=$(pkg_updates)  # Initial check for updates

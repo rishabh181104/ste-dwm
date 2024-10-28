@@ -228,7 +228,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,                 XK_p,       setborderpx,    {.i = +1 } },
 
     // kill dwm
-    { MODKEY|ControlMask,               XK_q,       spawn,        SHCMD("killall bar.sh chadwm") },
+    { MODKEY|ControlMask,               XK_q,       spawn,        SHCMD("killall bar.sh ste-dwm") },
 
     // kill window
     { MODKEY,                           XK_q,       killclient,     {0} },
