@@ -35,31 +35,31 @@ https://user-images.githubusercontent.com/59060246/223068062-d3c9847a-8713-42c7-
 # Install
 
 ```
-git clone https://github.com/rishabh181104/chad-dwm --depth 1  ~/.config/chadwm
-cd ~/.config/chadwm/
-cd chadwm
+git clone https://github.com/rishabh181104/ste-dwm --depth 1  ~/.config/chadwm
+cd ~/.config/ste-dwm/
+cd ste-dwm
 sudo make install
 ```
 (Note: chmod +x all of the scripts)
 
-# Run chadwm
+# Run ste-dwm
 
 ## With startx
 
 ```shell
-startx ~/.config/chadwm/scripts/run.sh
+startx ~/.config/ste-dwm/scripts/run.sh
 ```
 
 ## With sx
 
 ```shell
-sx sh ~/.config/chadwm/scripts/run.sh
+sx sh ~/.config/ste-dwm/scripts/run.sh
 ```
 
 (Make an alias for this :v)
 
 ```shell
-alias chadwm='startx ~/.config/chadwm/scripts/run.sh'
+alias chadwm='startx ~/.config/ste-dwm/scripts/run.sh'
 ```
 
 ## With Display Manager
@@ -67,14 +67,14 @@ alias chadwm='startx ~/.config/chadwm/scripts/run.sh'
 - Create a desktop entry (make sure to change `user` with your user):
 
 ```shell
-sudo touch /usr/share/xsessions/chadwm.desktop  
+sudo touch /usr/share/xsessions/ste-dwm.desktop  
 ```
 
 ```
 [Desktop Entry]
-Name=chadwm
+Name=Ste-Dwm
 Comment=dwm made beautiful 
-Exec=/home/user/.config/chadwm/scripts/./run.sh 
+Exec=/home/user/.config/ste-dwm/scripts/./run.sh 
 Type=Application 
 ```
 
@@ -85,7 +85,7 @@ Type=Application
 - You need to recompile dwm after every change you make to its source code.
 
 ```
-cd ~/.config/chadwm/chadwm
+cd ~/.config/ste-dwm/ste-dwm
 rm config.h
 sudo make install
 ```
