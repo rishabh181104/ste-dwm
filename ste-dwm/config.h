@@ -152,6 +152,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_space,   spawn,          SHCMD("rofi -show drun") },
     { MODKEY,                           XK_Return,  spawn,          SHCMD("alacritty")},
     { MODKEY,                           XK_b,       spawn,          SHCMD("brave-nightly")},
+    { MODKEY,                           XK_o,       spawn,          SHCMD("obsidian")},
 
     { MODKEY|ShiftMask,                 XK_w,       spawn,          SHCMD ("feh --randomize --bg-fill ~/Wallpapers/*")},
     { MODKEY,                           XK_u,       spawn,          SHCMD ("~/./cursor.AppImage")},

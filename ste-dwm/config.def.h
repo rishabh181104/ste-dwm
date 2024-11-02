@@ -152,6 +152,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_space,   spawn,          SHCMD("rofi -show drun") },
     { MODKEY,                           XK_Return,  spawn,          SHCMD("alacritty")},
     { MODKEY,                           XK_b,       spawn,          SHCMD("brave-nightly")},
+    { MODKEY,                           XK_o,       spawn,          SHCMD("obsidian")},
 
     { MODKEY|ShiftMask,                 XK_w,       spawn,          SHCMD ("feh --randomize --bg-fill ~/Wallpapers/*")},
     { MODKEY,                           XK_u,       spawn,          SHCMD ("~/./cursor.AppImage")},
@@ -161,6 +162,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,                 XK_space,   togglefloating, {0} },
     { MODKEY,                           XK_f,       togglefullscr,  {0} },
     { MODKEY|ShiftMask,                 XK_n,       spawn,          SHCMD("brightnessctl set 2%-") }, 
+    { MODKEY|ShiftMask,                 XK_m,       spawn,          SHCMD("brightnessctl set +2%") }, 
     { MODKEY|ControlMask,               XK_w,       tabmode,        { -1 } },
     { MODKEY|ControlMask,               XK_j,       focusstack,     {.i = +1 } },
     { MODKEY|ControlMask,               XK_k,       focusstack,     {.i = -1 } },
