@@ -143,6 +143,10 @@ static const Key keys[] = {
 	{0,             XF86XK_MonBrightnessUp,     spawn, {.v = brightness_up } },
         {0,             XF86XK_MonBrightnessDown,   spawn, {.v = brightness_down } },
 
+
+    { Mod1Mask,                         XK_j,       focusstack,     {.i = +1 } },
+    { Mod1Mask,                         XK_k,       focusstack,     {.i = -1 } },
+
     // screenshot fullscreen and cropped
     {MODKEY|ControlMask,                XK_u,       spawn,
         SHCMD("maim | xclip -selection clipboard -t image/png")},
