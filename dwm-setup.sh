@@ -49,6 +49,8 @@ EXTRA_APPS=(
   "bluez-utils"
   "blueman"
   "pamixer"
+  "mirage"
+  "mupdf"
 )
 
 # Installing essential programs

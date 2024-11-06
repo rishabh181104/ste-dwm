@@ -155,6 +155,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_o,       spawn,          SHCMD("zed")},
     { MODKEY,                           XK_v,       spawn,          SHCMD("obsidian")},
     { MODKEY,                           XK_s,       spawn,          SHCMD("spotify")},
+    { MODKEY,                           XK_e,       spawn,          SHCMD("nemo")},
 
     { MODKEY|ShiftMask,                 XK_w,       spawn,          SHCMD ("feh --randomize --bg-fill ~/Wallpapers/*")},
     { MODKEY,                           XK_u,       spawn,          SHCMD ("~/./cursor.AppImage")},
@@ -241,7 +242,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,                 XK_r,       restart,           {0} },
 
     // hide & restore windows
-    { MODKEY,                           XK_e,       hidewin,        {0} },
+    { MODKEY|ControlMask,               XK_e,       hidewin,        {0} },
     { MODKEY|ShiftMask,                 XK_e,       restorewin,     {0} },
 
     TAGKEYS(                            XK_1,                       0)

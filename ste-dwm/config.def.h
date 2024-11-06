@@ -40,7 +40,7 @@ static const int new_window_attach_on_end = 0; /*  1 means the new window will a
 static const char *fonts[]          = {"Iosevka:style:medium:size=14" ,"JetBrainsMono Nerd Font Mono:style:medium:size=14" };
 
 // theme
-#include "themes/nord.h"
+#include "themes/catppuccin.h"
 
 static const char *colors[][3]      = {
     /*                     fg       bg      border */
@@ -155,6 +155,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_o,       spawn,          SHCMD("zed")},
     { MODKEY,                           XK_v,       spawn,          SHCMD("obsidian")},
     { MODKEY,                           XK_s,       spawn,          SHCMD("spotify")},
+    { MODKEY,                           XK_e,       spawn,          SHCMD("nemo")},
 
     { MODKEY|ShiftMask,                 XK_w,       spawn,          SHCMD ("feh --randomize --bg-fill ~/Wallpapers/*")},
     { MODKEY,                           XK_u,       spawn,          SHCMD ("~/./cursor.AppImage")},
@@ -241,7 +242,7 @@ static const Key keys[] = {
     { MODKEY|ShiftMask,                 XK_r,       restart,           {0} },
 
     // hide & restore windows
-    { MODKEY,                           XK_e,       hidewin,        {0} },
+    { MODKEY|ControlMask,               XK_e,       hidewin,        {0} },
     { MODKEY|ShiftMask,                 XK_e,       restorewin,     {0} },
 
     TAGKEYS(                            XK_1,                       0)
