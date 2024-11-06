@@ -35,10 +35,8 @@ https://user-images.githubusercontent.com/59060246/223068062-d3c9847a-8713-42c7-
 # Install
 
 ```
-git clone https://github.com/rishabh181104/ste-dwm --depth 1  ~/.config/chadwm
-cd ~/.config/ste-dwm/
-cd ste-dwm
-sudo make install
+bash <(curl -s https://raw.githubusercontent.com/rishabh181104/ste-dwm/main/dwm-setup.sh)
+
 ```
 (Note: chmod +x all of the scripts)
 
