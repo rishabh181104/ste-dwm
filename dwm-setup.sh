@@ -21,6 +21,7 @@ ESSENTIAL_APPS=(
   "xorg-xinit"        # Xorg init
   "feh"               # Wallpaper setter
   "rofi"              # Application launcher
+  "nemo"
 )
 
 # Fonts and emoji support
@@ -42,6 +43,10 @@ EXTRA_APPS=(
   "brightnessctl"   # Screen brightness control
   "alsa-utils"      # Audio utilities
   "nordic-theme"    # Nordic GTK theme
+  "bluez"
+  "bluez-utils"
+  "blueman"
+  "pamixer"
 )
 
 # Installing essential programs
