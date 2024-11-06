@@ -16,8 +16,9 @@ cpu() {
 }
 
 pkg_updates() {
-  updates=""
-  # Check for updates based on the distribution
+  # Initialize updates as 0 instead of empty string
+  updates=0
+  
   if command -v xbps-install &> /dev/null; then
     # Void Linux
     updates=$({ timeout 20 sudo xbps-install -un 2>/dev/null || true; } | wc -l)
@@ -26,13 +27,16 @@ pkg_updates() {
     updates=$({ timeout 20 checkupdates 2>/dev/null || true; } | wc -l)
   elif command -v apt &> /dev/null; then
     # Debian/Ubuntu
-    updates=$({ timeout 20 apt list --upgradable 2>/dev/null || true; } | grep -c '^')
+    # Subtract 1 from the count to account for the header line
+    updates=$(( $({ timeout 20 apt list --upgradable 2>/dev/null || true; } | grep -c '^') - 1 ))
   fi
 
-  if [ -z "$updates" ] || [ "$updates" -eq 0 ]; then
+  # Ensure updates is treated as a number and compare properly
+  updates=${updates:-0}  # Set to 0 if empty
+  if [ "$updates" -eq 0 ]; then
     printf "  ^c$green^    Fully Updated"
   else
-    printf "  ^c$green^    $updates"" updates"
+    printf "  ^c$green^    %s updates" "$updates"
   fi
 }
 
