@@ -35,7 +35,7 @@ https://user-images.githubusercontent.com/59060246/223068062-d3c9847a-8713-42c7-
 # Install
 
 ```
-bash <(curl -s https://raw.githubusercontent.com/rishabh181104/ste-dwm/main/dwm-setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/rishabh181104/ste-dwm/master/dwm-setup.sh)
 
 ```
 (Note: chmod +x all of the scripts)
