@@ -22,8 +22,8 @@ ESSENTIAL_APPS=(
   "feh"               # Wallpaper setter
   "rofi"              # Application launcher
   "nemo"
-  "network-manager"
-  "nm-applet"
+  "networkmanager"
+  "network-manager-applet"
 )
 
 # Fonts and emoji support
