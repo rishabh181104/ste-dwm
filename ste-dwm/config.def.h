@@ -156,7 +156,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_space,   spawn,          SHCMD("rofi -show drun") },
     { MODKEY,                           XK_Return,  spawn,          SHCMD("alacritty")},
     { MODKEY,                           XK_b,       spawn,          SHCMD("brave-nightly")},
-    { MODKEY,                           XK_o,       spawn,          SHCMD("zed")},
+    { MODKEY,                           XK_o,       spawn,          SHCMD("zeditor")},
     { MODKEY,                           XK_v,       spawn,          SHCMD("obsidian")},
     { MODKEY,                           XK_s,       spawn,          SHCMD("spotify")},
     { MODKEY,                           XK_e,       spawn,          SHCMD("nemo")},
