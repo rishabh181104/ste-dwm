@@ -6,7 +6,7 @@
 interval=0
 
 # load colors
-. ~/.config/ste-dwm/scripts/bar_themes/catppuccin
+. ~/.config/ste-dwm/scripts/bar_themes/nord
 
 cpu() {
   cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
