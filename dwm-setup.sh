@@ -23,6 +23,7 @@ ESSENTIAL_APPS=(
   "rofi"              # Application launcher
   "nemo"
   "networkmanager"
+  "imlib2"
   "network-manager-applet"
 )
 
