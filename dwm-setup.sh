@@ -25,6 +25,9 @@ ESSENTIAL_APPS=(
   "networkmanager"
   "imlib2"
   "network-manager-applet"
+  "zed"
+  "lutris"
+  "micro"
 )
 
 # Fonts and emoji support
