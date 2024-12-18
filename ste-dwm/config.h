@@ -160,6 +160,7 @@ static const Key keys[] = {
     { MODKEY,                           XK_v,       spawn,          SHCMD("obsidian")},
     { MODKEY,                           XK_s,       spawn,          SHCMD("spotify")},
     { MODKEY,                           XK_e,       spawn,          SHCMD("nemo")},
+    { MODKEY,                           XK_g,       spawn,          SHCMD("github-desktop")},
 
     { MODKEY|ShiftMask,                 XK_w,       spawn,          SHCMD ("feh --randomize --bg-fill ~/Wallpapers/*")},
     { MODKEY,                           XK_u,       spawn,          SHCMD ("~/./cursor.AppImage")},
