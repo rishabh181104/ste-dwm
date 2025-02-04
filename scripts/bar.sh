@@ -21,14 +21,14 @@ pkg_updates() {
 
 	if command -v xbps-install &> /dev/null; then
 		# Void Linux
-		updates=$({ timeout 20 sudo xbps-install -un 2>/dev/null || true; } | wc -l)
+		updates=$({ timeout 60 sudo xbps-install -un 2>/dev/null || true; } | wc -l)
 	elif command -v checkupdates &> /dev/null; then
 		# Arch Linux
-		updates=$({ timeout 20 checkupdates 2>/dev/null || true; } | wc -l)
+		updates=$({ timeout 60 checkupdates 2>/dev/null || true; } | wc -l)
 	elif command -v apt &> /dev/null; then
 		# Debian/Ubuntu
 		# Subtract 1 from the count to account for the header line
-		updates=$(( $({ timeout 20 apt list --upgradable 2>/dev/null || true; } | grep -c '^') - 1 ))
+		updates=$(( $({ timeout 60 apt list --upgradable 2>/dev/null || true; } | grep -c '^') - 1 ))
 	fi
 
   # Ensure updates is treated as a number and compare properly
@@ -67,7 +67,7 @@ brightness() {
 }
 
 mem() {
-	printf "^c$blue^^b$black^  "
+	printf "^c$blue^^b$black^  "
 	printf "^c$blue^ $(free -h | awk '/^Mem/ { print $3 }' | sed s/i//g)"
 }
 
@@ -86,15 +86,15 @@ internet_speed() {
   rx_speed=$(( (rx2 - rx1) / 1024 ))
   tx_speed=$(( (tx2 - tx1) / 1024 ))
 
-  printf "^c$black^ ^b$blue^ 󰀂 ^d^%s" " ^c$blue^↓${rx_speed}KB/s ↑${tx_speed}KB/s"
+  printf "^c$black^ ^b$blue^   ^d^%s" " ^c$blue^↓${rx_speed}KB/s ↑${tx_speed}KB/s"
 }
 
 clock() {
-	printf "^c$black^ ^b$darkblue^ 󱑆 "
+	printf "^c$black^ ^b$darkblue^  "
 	printf "^c$black^^b$blue^ $(date '+%I:%M %p')  "
 }
 
-update_interval=1
+update_interval=60
 pkg_check_interval=60 # Check for updates every hour
 
 updates=$(pkg_updates)  # Initial check for updates
