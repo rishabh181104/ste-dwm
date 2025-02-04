@@ -6,7 +6,7 @@
 interval=0
 
 # load colors
-. ~/.config/ste-dwm/scripts/bar_themes/dracula
+. ~/.config/ste-dwm/scripts/bar_themes/onedark
 
 cpu() {
 	cpu_val=$(grep -o "^[^ ]*" /proc/loadavg)
