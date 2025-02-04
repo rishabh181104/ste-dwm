@@ -8,12 +8,12 @@ static const unsigned int default_border =
 	3; /* to switch back to default border after dynamic border resizing via
       keybinds */
 static const unsigned int snap = 32;  /* snap pixel */
-static const unsigned int gappih = 3; /* horiz inner gap between windows */
-static const unsigned int gappiv = 3; /* vert inner gap between windows */
+static const unsigned int gappih = 2; /* horiz inner gap between windows */
+static const unsigned int gappiv = 2; /* vert inner gap between windows */
 static const unsigned int gappoh =
-	3; /* horiz outer gap between windows and screen edge */
+	1; /* horiz outer gap between windows and screen edge */
 static const unsigned int gappov =
-	3; /* vert outer gap between windows and screen edge */
+	1; /* vert outer gap between windows and screen edge */
 static const int smartgaps =
 	0; /* 1 means no outer gap when there is only one window */
 static const unsigned int systraypinning =
@@ -54,8 +54,8 @@ static const int new_window_attach_on_end =
 #define ICONSPACING 8 /* space between icon and title */
 
 static const char *fonts[] = {
-	"FiraCode:style:medium:size=12",
-	"FiraCode Nerd Font Mono:style:medium:size=12"};
+	"FiraCode:style:medium:size=10",
+	"FiraCode Nerd Font Mono:style:medium:size=10"};
 
 // theme
 #include "themes/dracula.h"
