@@ -184,7 +184,7 @@ static const Key keys[] = {
 	{MODKEY, XK_b, spawn, SHCMD("google-chrome")},
 	{MODKEY, XK_o, spawn, SHCMD("zed")},
 	{MODKEY, XK_v, spawn, SHCMD("obsidian")},
-	{MODKEY, XK_s, spawn, SHCMD("spotify")},
+	{MODKEY, XK_s, spawn, SHCMD("spotify-launcher")},
 	{MODKEY, XK_e, spawn, SHCMD("dolphin")},
 	{MODKEY, XK_g, spawn, SHCMD("github-desktop")},
 	{MODKEY, XK_t, spawn, SHCMD("jetbrans-toolbox")},
