@@ -192,8 +192,7 @@ static const Key keys[] = {
 	{MODKEY, XK_g, spawn, SHCMD("github-desktop")},
 	{MODKEY, XK_t, spawn, SHCMD("jetbrans-toolbox")},
 
-	{MODKEY | ShiftMask, XK_w, spawn,
-		SHCMD("feh --randomize --bg-fill ~/Wallpapers/*")},
+	{MODKEY, XK_w, spawn, SHCMD("feh --randomize --bg-fill ~/Wallpapers/*")},
 	{MODKEY, XK_u, spawn, SHCMD("cursor.AppImage")},
 	// toggle stuff
 	{MODKEY | ShiftMask, XK_b, togglebar, {0}},
