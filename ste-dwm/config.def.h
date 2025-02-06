@@ -185,7 +185,7 @@ static const Key keys[] = {
 	{MODKEY, XK_Return, spawn, SHCMD("alacritty")},
 	{MODKEY, XK_b, spawn, SHCMD("google-chrome")},
 	{MODKEY, XK_l, spawn, SHCMD("i3lock")},
-	{MODKEY, XK_u, spawn, SHCMD("zed")},
+	{MODKEY, XK_u, spawn, SHCMD("cursor.AppImage")},
 	{MODKEY, XK_v, spawn, SHCMD("obsidian")},
 	{MODKEY, XK_s, spawn, SHCMD("spotify-launcher")},
 	{MODKEY, XK_e, spawn, SHCMD("dolphin")},
@@ -193,7 +193,7 @@ static const Key keys[] = {
 	{MODKEY, XK_t, spawn, SHCMD("jetbrans-toolbox")},
 
 	{MODKEY, XK_w, spawn, SHCMD("feh --randomize --bg-fill ~/Wallpapers/*")},
-	{MODKEY, XK_o, spawn, SHCMD("cursor.AppImage")},
+	{MODKEY, XK_o, spawn, SHCMD("zed")},
 	// toggle stuff
 	{MODKEY | ShiftMask, XK_b, togglebar, {0}},
 	{MODKEY | ControlMask, XK_t, togglegaps, {0}},
