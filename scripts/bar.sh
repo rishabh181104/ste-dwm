@@ -27,8 +27,10 @@ pkg_updates() {
 		updates=$({ timeout 60 checkupdates 2>/dev/null || true; } | wc -l)
 	elif command -v apt &> /dev/null; then
 		# Debian/Ubuntu
-		# Subtract 1 from the count to account for the header line
 		updates=$(( $({ timeout 60 apt list --upgradable 2>/dev/null || true; } | grep -c '^') - 1 ))
+	elif command -v zypper &> /dev/null; then
+		# openSUSE Tumbleweed
+		updates=$({ timeout 60 sudo zypper list-updates -i 2>/dev/null || true; } | grep -c '^i')
 	fi
 
   # Ensure updates is treated as a number and compare properly
@@ -94,7 +96,7 @@ clock() {
 	printf "^c$black^^b$blue^ $(date '+%I:%M %p')  "
 }
 
-update_interval=60
+update_interval=1
 pkg_check_interval=60 # Check for updates every hour
 
 updates=$(pkg_updates)  # Initial check for updates
