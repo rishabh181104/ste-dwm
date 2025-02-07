@@ -191,7 +191,7 @@ static const Key keys[] = {
 	{MODKEY, XK_s, spawn, SHCMD("spotify-launcher")},
 	{MODKEY, XK_e, spawn, SHCMD("dolphin")},
 	{MODKEY, XK_g, spawn, SHCMD("github-desktop")},
-	{MODKEY, XK_t, spawn, SHCMD("jetbrans-toolbox")},
+	{MODKEY, XK_t, spawn, SHCMD("jetbrains-toolbox")},
 
 	{MODKEY, XK_w, spawn, SHCMD("feh --randomize --bg-fill ~/Wallpapers/*")},
 	{MODKEY, XK_o, spawn, SHCMD("zed")},
