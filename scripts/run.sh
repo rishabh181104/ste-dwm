@@ -18,8 +18,6 @@ xset s noblank &
 
 xset -dpms &
 
-mate-power-manager &
-
 bash ~/.config/ste-dwm/scripts/bar.sh &
 
 while type ste-dwm >/dev/null; do ste-dwm && continue || break; done
