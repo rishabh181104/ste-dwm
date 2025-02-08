@@ -12,6 +12,12 @@ flameshot &
 
 nm-applet &
 
+xset s off &
+
+xset s noblank &
+
+xset -dpms &
+
 mate-power-manager &
 
 bash ~/.config/ste-dwm/scripts/bar.sh &
